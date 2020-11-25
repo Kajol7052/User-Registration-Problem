@@ -29,3 +29,14 @@ else
         echo "Email address $mail is Invalid"
 fi
 
+#UC-4 describes validation of pre-defined mobile format such as
+#+1 8087339090,+91 8087339090,+912 8087339090,8087339090,08087339090,+1-8087339090,+91-8087339090, +912-8087339090
+read -p "Enter mobile number : " mob
+pat="^(\+[0-9]{1,3}[- ]?)?[0-9]{10}$"
+if [[ $mob =~ $pat ]]
+then
+        echo "Valid"
+else
+        echo "Invaild"
+fi
+
