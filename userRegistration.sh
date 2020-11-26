@@ -31,6 +31,7 @@ fi
 
 #UC-4 describes validation of pre-defined mobile format such as
 #+1 8087339090,+91 8087339090,+912 8087339090,8087339090,08087339090,+1-8087339090,+91-8087339090, +912-8087339090
+
 read -p "Enter mobile number : " mob
 pat="^(\+[0-9]{1,3}[- ]?)?[0-9]{10}$"
 if [[ $mob =~ $pat ]]
@@ -42,6 +43,7 @@ fi
 
 #UC-5 describes user need to follow predefined password format
 # RULE-1 : Password contain minimum 8 characters
+
 read -p "Enter Password : " password
 pat="^[a-zA-Z0-9]{8,}$ "
 if [[ $password =~ $pat ]]
@@ -51,3 +53,15 @@ else
         echo "Invaild Password"
 fi
 
+
+#UC-6 describes user need to follow predefined password format
+# RULE-2 : Password contains atleast one Upper Case
+
+read -p "Enter Password : " password
+pat="^(?=.*?[A-Z])(?=.*?[a-z]).{8,}$ "
+if [[ $password =~ $pat ]]
+then
+        echo "Valid Password"
+else
+        echo "Invaild Password"
+fi
