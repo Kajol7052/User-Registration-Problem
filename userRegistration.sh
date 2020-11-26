@@ -35,8 +35,19 @@ read -p "Enter mobile number : " mob
 pat="^(\+[0-9]{1,3}[- ]?)?[0-9]{10}$"
 if [[ $mob =~ $pat ]]
 then
-        echo "Valid"
+        echo "Valid Number"
 else
-        echo "Invaild"
+        echo "Invaild Number"
+fi
+
+#UC-5 describes user need to follow predefined password format
+# RULE-1 : Password contain minimum 8 characters
+read -p "Enter Password : " password
+pat="^[a-zA-Z0-9]{8,}$ "
+if [[ $password =~ $pat ]]
+then
+        echo "Valid Password"
+else
+        echo "Invaild Password"
 fi
 
