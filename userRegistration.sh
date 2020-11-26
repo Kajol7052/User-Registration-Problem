@@ -65,3 +65,16 @@ then
 else
         echo "Invaild Password"
 fi
+
+
+#UC-7 describes user need to follow predefined password format
+# RULE-3 : Password contains atleast one Numeric Number
+
+read -p "Enter Password : " password
+pat="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"
+if [[ $password =~ $pat ]]
+then
+        echo "Valid Password"
+else
+        echo "Invaild Password"
+fi
